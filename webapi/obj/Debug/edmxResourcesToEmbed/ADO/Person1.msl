@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="thailandModelStoreContainer" CdmEntityContainer="thailandEntities">
+    <EntitySetMapping Name="amphurs">
+      <EntityTypeMapping TypeName="thailandModel.amphur">
+        <MappingFragment StoreEntitySet="amphur">
+          <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+          <ScalarProperty Name="AMPHUR_CODE" ColumnName="AMPHUR_CODE" />
+          <ScalarProperty Name="AMPHUR_NAME" ColumnName="AMPHUR_NAME" />
+          <ScalarProperty Name="AMPHUR_NAME_ENG" ColumnName="AMPHUR_NAME_ENG" />
+          <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+          <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="districts">
+      <EntityTypeMapping TypeName="thailandModel.district">
+        <MappingFragment StoreEntitySet="district">
+          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+          <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+          <ScalarProperty Name="AMPHUR_ID" ColumnName="AMPHUR_ID" />
+          <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="geographies">
+      <EntityTypeMapping TypeName="thailandModel.geography">
+        <MappingFragment StoreEntitySet="geography">
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+          <ScalarProperty Name="GEO_NAME" ColumnName="GEO_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provinces">
+      <EntityTypeMapping TypeName="thailandModel.province">
+        <MappingFragment StoreEntitySet="province">
+          <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+          <ScalarProperty Name="PROVINCE_CODE" ColumnName="PROVINCE_CODE" />
+          <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
+          <ScalarProperty Name="PROVINCE_NAME_ENG" ColumnName="PROVINCE_NAME_ENG" />
+          <ScalarProperty Name="GEO_ID" ColumnName="GEO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="people">
+      <EntityTypeMapping TypeName="thailandModel.person">
+        <MappingFragment StoreEntitySet="person">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="career" ColumnName="career" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

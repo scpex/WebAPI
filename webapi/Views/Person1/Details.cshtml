@@ -1,0 +1,82 @@
+﻿@model webapi.Models.Person1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Person1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amphur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amphur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amphur_eng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amphur_eng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province_eng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province_eng)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postcode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

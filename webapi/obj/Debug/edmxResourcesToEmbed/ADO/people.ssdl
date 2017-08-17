@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="thailandModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="amphur">
+    <Key>
+      <PropertyRef Name="AMPHUR_ID" />
+    </Key>
+    <Property Name="AMPHUR_ID" Type="int" Nullable="false" />
+    <Property Name="AMPHUR_CODE" Type="varchar" MaxLength="4" />
+    <Property Name="AMPHUR_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="AMPHUR_NAME_ENG" Type="varchar" MaxLength="150" />
+    <Property Name="POSTCODE" Type="varchar" MaxLength="5" />
+    <Property Name="GEO_ID" Type="int" />
+    <Property Name="PROVINCE_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="district">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="int" Nullable="false" />
+    <Property Name="DISTRICT_CODE" Type="varchar" MaxLength="6" />
+    <Property Name="DISTRICT_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="AMPHUR_ID" Type="int" />
+    <Property Name="PROVINCE_ID" Type="int" />
+    <Property Name="GEO_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="geography">
+    <Key>
+      <PropertyRef Name="GEO_ID" />
+    </Key>
+    <Property Name="GEO_ID" Type="int" Nullable="false" />
+    <Property Name="GEO_NAME" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'thailand.dbo.municipal' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="municipal">
+          <Property Name="MUNI_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAM_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AMP_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROV_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUNI_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="TAM_T" Type="nvarchar" MaxLength="50" />
+          <Property Name="AMP_T" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROV_T" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'thailand.dbo.orbotor' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="orbotor">
+          <Property Name="ABT_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAM_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AMP_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROV_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ABT_T" Type="nvarchar" MaxLength="500" />
+          <Property Name="AMP_T" Type="nvarchar" MaxLength="500" />
+          <Property Name="PROV_T" Type="nvarchar" MaxLength="500" />
+        </EntityType>-->
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="lastname" Type="varchar" MaxLength="100" />
+    <Property Name="nick_name" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="age" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="education" Type="varchar" MaxLength="500" />
+    <Property Name="career" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="person_th">
+    <Key>
+      <PropertyRef Name="id1" />
+    </Key>
+    <Property Name="id1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id2" Type="nvarchar" MaxLength="50" />
+    <Property Name="pname" Type="nvarchar" MaxLength="50" />
+    <Property Name="fname" Type="nvarchar" MaxLength="100" />
+    <Property Name="lname" Type="nvarchar" MaxLength="100" />
+    <Property Name="id3" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="province">
+    <Key>
+      <PropertyRef Name="PROVINCE_ID" />
+    </Key>
+    <Property Name="PROVINCE_ID" Type="int" Nullable="false" />
+    <Property Name="PROVINCE_CODE" Type="varchar" MaxLength="2" />
+    <Property Name="PROVINCE_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="PROVINCE_NAME_ENG" Type="varchar" MaxLength="150" />
+    <Property Name="GEO_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'thailand.dbo.village2010' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="village2010">
+          <Property Name="VILL_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="VILL_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAM_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="AMP_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROV_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="VILL_T" Type="nvarchar" MaxLength="500" />
+          <Property Name="TAM_T" Type="nvarchar" MaxLength="500" />
+          <Property Name="AMP_T" Type="nvarchar" MaxLength="500" />
+          <Property Name="PROV_T" Type="nvarchar" MaxLength="500" />
+        </EntityType>-->
+  <EntityContainer Name="thailandModelStoreContainer">
+    <EntitySet Name="amphur" EntityType="Self.amphur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="district" EntityType="Self.district" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="geography" EntityType="Self.geography" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="person_th" EntityType="Self.person_th" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="province" EntityType="Self.province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

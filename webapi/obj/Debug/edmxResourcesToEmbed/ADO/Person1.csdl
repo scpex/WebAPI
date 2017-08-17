@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="thailandModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="amphur">
+    <Key>
+      <PropertyRef Name="AMPHUR_ID" />
+    </Key>
+    <Property Name="AMPHUR_ID" Type="Int32" Nullable="false" />
+    <Property Name="AMPHUR_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="POSTCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="GEO_ID" Type="Int32" />
+    <Property Name="PROVINCE_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="district">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DISTRICT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_ID" Type="Int32" />
+    <Property Name="PROVINCE_ID" Type="Int32" />
+    <Property Name="GEO_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="geography">
+    <Key>
+      <PropertyRef Name="GEO_ID" />
+    </Key>
+    <Property Name="GEO_ID" Type="Int32" Nullable="false" />
+    <Property Name="GEO_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="province">
+    <Key>
+      <PropertyRef Name="PROVINCE_ID" />
+    </Key>
+    <Property Name="PROVINCE_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROVINCE_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PROVINCE_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROVINCE_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="GEO_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nick_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="education" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="thailandEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="amphurs" EntityType="Self.amphur" />
+    <EntitySet Name="districts" EntityType="Self.district" />
+    <EntitySet Name="geographies" EntityType="Self.geography" />
+    <EntitySet Name="provinces" EntityType="Self.province" />
+    <EntitySet Name="people" EntityType="Self.person" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="thailandModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="amphur">
+    <Key>
+      <PropertyRef Name="AMPHUR_ID" />
+    </Key>
+    <Property Name="AMPHUR_ID" Type="Int32" Nullable="false" />
+    <Property Name="AMPHUR_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="POSTCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="GEO_ID" Type="Int32" />
+    <Property Name="PROVINCE_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="district">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DISTRICT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_ID" Type="Int32" />
+    <Property Name="PROVINCE_ID" Type="Int32" />
+    <Property Name="GEO_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="geography">
+    <Key>
+      <PropertyRef Name="GEO_ID" />
+    </Key>
+    <Property Name="GEO_ID" Type="Int32" Nullable="false" />
+    <Property Name="GEO_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nick_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="education" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="career" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="person_th">
+    <Key>
+      <PropertyRef Name="id1" />
+    </Key>
+    <Property Name="id1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="id3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="province">
+    <Key>
+      <PropertyRef Name="PROVINCE_ID" />
+    </Key>
+    <Property Name="PROVINCE_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROVINCE_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PROVINCE_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROVINCE_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="GEO_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="join_detail">
+    <Key>
+      <PropertyRef Name="DISTRICT_ID" />
+    </Key>
+    <Property Name="DISTRICT_ID" Type="Int32" Nullable="false" />
+    <Property Name="DISTRICT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROVINCE_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROVINCE_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="POSTCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="GEO_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="thailandEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="amphurs" EntityType="Self.amphur" />
+    <EntitySet Name="districts" EntityType="Self.district" />
+    <EntitySet Name="geographies" EntityType="Self.geography" />
+    <EntitySet Name="people" EntityType="Self.person" />
+    <EntitySet Name="person_th" EntityType="Self.person_th" />
+    <EntitySet Name="provinces" EntityType="Self.province" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="join_detail" EntityType="Self.join_detail" />
+    <FunctionImport Name="all_village53" ReturnType="Collection(thailandModel.all_village53_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(thailandModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(thailandModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="village53" ReturnType="Collection(thailandModel.village53_Result)">
+      <Parameter Name="vill_name" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="all_village53_Result">
+    <Property Type="String" Name="VILL_CODE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VILL_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VILL_T" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="DISTRICT_ID" Nullable="false" />
+    <Property Type="String" Name="DISTRICT_CODE" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="DISTRICT_NAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="AMPHUR_NAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="AMPHUR_NAME_ENG" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="PROVINCE_NAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="PROVINCE_NAME_ENG" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="POSTCODE" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="GEO_NAME" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="village53_Result">
+    <Property Type="String" Name="VILL_CODE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VILL_T" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="VILL_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DISTRICT_NAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="AMPHUR_NAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="AMPHUR_NAME_ENG" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="PROVINCE_NAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="PROVINCE_NAME_ENG" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="POSTCODE" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="GEO_NAME" Nullable="true" MaxLength="255" />
+  </ComplexType>
+</Schema>
