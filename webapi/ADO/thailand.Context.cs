@@ -13,10 +13,10 @@ namespace webapi.ADO
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class thailandEntities : DbContext
+    public partial class thailandEntities1 : DbContext
     {
-        public thailandEntities()
-            : base("name=thailandEntities")
+        public thailandEntities1()
+            : base("name=thailandEntities1")
         {
         }
     
@@ -32,7 +32,6 @@ namespace webapi.ADO
         public virtual DbSet<person_th> person_th { get; set; }
         public virtual DbSet<province> provinces { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-
-        public System.Data.Entity.DbSet<webapi.Models.Person1> Person1 { get; set; }
+        public virtual DbSet<village2010> village2010 { get; set; }
     }
 }

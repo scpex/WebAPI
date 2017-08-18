@@ -12,12 +12,17 @@ namespace webapi.ADO
     using System;
     using System.Collections.Generic;
     
-    public partial class province
+    public partial class village2010
     {
-        public int PROVINCE_ID { get; set; }
-        public string PROVINCE_CODE { get; set; }
-        public string PROVINCE_NAME { get; set; }
-        public string PROVINCE_NAME_ENG { get; set; }
-        public string GEO_ID { get; set; }
+        public int id { get; set; }
+        public string VILL_NO { get; set; }
+        public string VILL_CODE { get; set; }
+        public string TAM_CODE { get; set; }
+        public string AMP_CODE { get; set; }
+        public string PROV_CODE { get; set; }
+        public string VILL_T { get; set; }
+        public string TAM_T { get; set; }
+        public string AMP_T { get; set; }
+        public string PROV_T { get; set; }
     }
 }

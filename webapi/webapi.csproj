@@ -153,42 +153,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADO\amphur.cs">
-      <DependentUpon>people.tt</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\district.cs">
-      <DependentUpon>people.tt</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\geography.cs">
-      <DependentUpon>people.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ADO\people.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>people.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ADO\people.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>people.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ADO\people.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>people.edmx</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\person.cs">
-      <DependentUpon>people.tt</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\person_th.cs">
-      <DependentUpon>people.tt</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\province.cs">
-      <DependentUpon>people.tt</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\sysdiagram.cs">
-      <DependentUpon>people.tt</DependentUpon>
+      <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
-    <Compile Include="ADO\thailand.cs" />
+    <Compile Include="ADO\thailand.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>thailand.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\thailand.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>thailand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\thailand.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>thailand.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\village2010.cs">
+      <DependentUpon>thailand.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -221,28 +223,33 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AmphurController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Controllers\ThaiIDController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\People.cs" />
     <Compile Include="Models\Person1.cs" />
     <Compile Include="Models\Product .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ADO\people.Context.tt">
+    <Content Include="ADO\thailand.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>people.edmx</DependentUpon>
-      <LastGenOutput>people.Context.cs</LastGenOutput>
+      <DependentUpon>thailand.edmx</DependentUpon>
+      <LastGenOutput>thailand.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ADO\people.tt">
+    <Content Include="ADO\thailand.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>people.edmx</DependentUpon>
-      <LastGenOutput>people.cs</LastGenOutput>
+      <DependentUpon>thailand.edmx</DependentUpon>
+      <LastGenOutput>thailand.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
@@ -274,12 +281,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="ADO\people.edmx">
+    <EntityDeploy Include="ADO\thailand.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>people.Designer.cs</LastGenOutput>
+      <LastGenOutput>thailand.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="ADO\people.edmx.diagram">
-      <DependentUpon>people.edmx</DependentUpon>
+    <Content Include="ADO\thailand.edmx.diagram">
+      <DependentUpon>thailand.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -306,6 +313,11 @@
     <Content Include="Views\Person1\Details.cshtml" />
     <Content Include="Views\Person1\Edit.cshtml" />
     <Content Include="Views\Person1\Index.cshtml" />
+    <Content Include="Views\People\Create.cshtml" />
+    <Content Include="Views\People\Delete.cshtml" />
+    <Content Include="Views\People\Details.cshtml" />
+    <Content Include="Views\People\Edit.cshtml" />
+    <Content Include="Views\People\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,7 +19,7 @@ namespace webapi.ADO
         public string AMPHUR_NAME { get; set; }
         public string AMPHUR_NAME_ENG { get; set; }
         public string POSTCODE { get; set; }
-        public Nullable<int> GEO_ID { get; set; }
-        public Nullable<int> PROVINCE_ID { get; set; }
+        public string GEO_ID { get; set; }
+        public string PROVINCE_ID { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="be28acf263064df7a8abfcd474186bbb" Name="Diagram1">
+      <Diagram DiagramId="0cef3b909aa74a4ebb3540b79f04e298" Name="Diagram1">
         <EntityTypeShape EntityType="thailandModel.amphur" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="thailandModel.district" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="thailandModel.geography" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="thailandModel.person_th" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="thailandModel.province" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="thailandModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="thailandModel.village2010" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

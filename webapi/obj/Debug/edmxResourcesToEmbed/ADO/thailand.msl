@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="thailandModelStoreContainer" CdmEntityContainer="thailandEntities2">
+  <EntityContainerMapping StorageEntityContainer="thailandModel1StoreContainer" CdmEntityContainer="thailandEntities1">
     <EntitySetMapping Name="amphurs">
       <EntityTypeMapping TypeName="thailandModel.amphur">
         <MappingFragment StoreEntitySet="amphur">
@@ -85,78 +85,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="join_detail">
-      <EntityTypeMapping TypeName="thailandModel.join_detail">
-        <MappingFragment StoreEntitySet="join_detail">
-          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
-          <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
-          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
-          <ScalarProperty Name="AMPHUR_NAME" ColumnName="AMPHUR_NAME" />
-          <ScalarProperty Name="AMPHUR_NAME_ENG" ColumnName="AMPHUR_NAME_ENG" />
-          <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
-          <ScalarProperty Name="PROVINCE_NAME_ENG" ColumnName="PROVINCE_NAME_ENG" />
-          <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
-          <ScalarProperty Name="GEO_NAME" ColumnName="GEO_NAME" />
+    <EntitySetMapping Name="village2010">
+      <EntityTypeMapping TypeName="thailandModel.village2010">
+        <MappingFragment StoreEntitySet="village2010">
+          <ScalarProperty Name="PROV_T" ColumnName="PROV_T" />
+          <ScalarProperty Name="AMP_T" ColumnName="AMP_T" />
+          <ScalarProperty Name="TAM_T" ColumnName="TAM_T" />
+          <ScalarProperty Name="VILL_T" ColumnName="VILL_T" />
+          <ScalarProperty Name="PROV_CODE" ColumnName="PROV_CODE" />
+          <ScalarProperty Name="AMP_CODE" ColumnName="AMP_CODE" />
+          <ScalarProperty Name="TAM_CODE" ColumnName="TAM_CODE" />
+          <ScalarProperty Name="VILL_CODE" ColumnName="VILL_CODE" />
+          <ScalarProperty Name="VILL_NO" ColumnName="VILL_NO" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="all_village53" FunctionName="thailandModel.Store.all_village53">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="thailandModel.all_village53_Result">
-          <ScalarProperty Name="VILL_CODE" ColumnName="VILL_CODE" />
-          <ScalarProperty Name="VILL_NO" ColumnName="VILL_NO" />
-          <ScalarProperty Name="VILL_T" ColumnName="VILL_T" />
-          <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
-          <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
-          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
-          <ScalarProperty Name="AMPHUR_NAME" ColumnName="AMPHUR_NAME" />
-          <ScalarProperty Name="AMPHUR_NAME_ENG" ColumnName="AMPHUR_NAME_ENG" />
-          <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
-          <ScalarProperty Name="PROVINCE_NAME_ENG" ColumnName="PROVINCE_NAME_ENG" />
-          <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
-          <ScalarProperty Name="GEO_NAME" ColumnName="GEO_NAME" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="thailandModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="thailandModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="thailandModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="thailandModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="thailandModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="thailandModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="thailandModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="thailandModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="thailandModel.Store.sp_upgraddiagrams" />
-    <FunctionImportMapping FunctionImportName="village53" FunctionName="thailandModel.Store.village53">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="thailandModel.village53_Result">
-          <ScalarProperty Name="VILL_CODE" ColumnName="VILL_CODE" />
-          <ScalarProperty Name="VILL_T" ColumnName="VILL_T" />
-          <ScalarProperty Name="VILL_NO" ColumnName="VILL_NO" />
-          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
-          <ScalarProperty Name="AMPHUR_NAME" ColumnName="AMPHUR_NAME" />
-          <ScalarProperty Name="AMPHUR_NAME_ENG" ColumnName="AMPHUR_NAME_ENG" />
-          <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
-          <ScalarProperty Name="PROVINCE_NAME_ENG" ColumnName="PROVINCE_NAME_ENG" />
-          <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
-          <ScalarProperty Name="GEO_NAME" ColumnName="GEO_NAME" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

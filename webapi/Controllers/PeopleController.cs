@@ -4,23 +4,30 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using webapi.ADO;   
+using webapi.ADO;
 namespace webapi.Controllers
 {
-    [Route("api/thaiid")]
-    public class ThaiIDController : ApiController
+    [Route("api/people")]
+    public class PeopleController : ApiController
     {
         private thailandEntities1 db = new thailandEntities1();
-
         [HttpGet]
         [AllowAnonymous]
-        public dynamic ID(string id)
+        public dynamic GetAllPeople()
+        {
+            var data = db.person_th.Select(s => new { s.pname, s.fname, s.lname }).Take(10000).ToList();
+            return Json(data);
+        }
+        [Route("api/people/{id}")]
+        [HttpGet]
+        [AllowAnonymous]
+        public dynamic id(string id)
         {
             if (id.Length != 13)
             {
                 return "ID Incorrect!!!";
             }
-            int i = 11-(((Convert.ToInt32(id.Substring(0, 1)) * 13)
+            int i = 11 - (((Convert.ToInt32(id.Substring(0, 1)) * 13)
                 + (Convert.ToInt32(id.Substring(1, 1)) * 12)
                 + (Convert.ToInt32(id.Substring(2, 1)) * 11)
                 + (Convert.ToInt32(id.Substring(3, 1)) * 10)
@@ -31,7 +38,7 @@ namespace webapi.Controllers
                 + (Convert.ToInt32(id.Substring(8, 1)) * 5)
                 + (Convert.ToInt32(id.Substring(9, 1)) * 4)
                 + (Convert.ToInt32(id.Substring(10, 1)) * 3)
-                + (Convert.ToInt32(id.Substring(11, 1)) * 2))%11);
+                + (Convert.ToInt32(id.Substring(11, 1)) * 2)) % 11);
             int j = Convert.ToInt32(id.Substring(12, 1));
             if (j != i)
             {

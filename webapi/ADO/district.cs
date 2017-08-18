@@ -17,8 +17,8 @@ namespace webapi.ADO
         public int DISTRICT_ID { get; set; }
         public string DISTRICT_CODE { get; set; }
         public string DISTRICT_NAME { get; set; }
-        public Nullable<int> AMPHUR_ID { get; set; }
-        public Nullable<int> PROVINCE_ID { get; set; }
-        public Nullable<int> GEO_ID { get; set; }
+        public string AMPHUR_ID { get; set; }
+        public string PROVINCE_ID { get; set; }
+        public string GEO_ID { get; set; }
     }
 }

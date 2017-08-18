@@ -5,12 +5,12 @@
       <PropertyRef Name="AMPHUR_ID" />
     </Key>
     <Property Name="AMPHUR_ID" Type="Int32" Nullable="false" />
-    <Property Name="AMPHUR_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AMPHUR_CODE" Type="String" MaxLength="4" Unicode="false" />
     <Property Name="AMPHUR_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="AMPHUR_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="POSTCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="GEO_ID" Type="Int32" />
-    <Property Name="PROVINCE_ID" Type="Int32" />
+    <Property Name="GEO_ID" Type="String" />
+    <Property Name="PROVINCE_ID" Type="String" />
   </EntityType>
   <EntityType Name="district">
     <Key>
@@ -19,9 +19,9 @@
     <Property Name="DISTRICT_ID" Type="Int32" Nullable="false" />
     <Property Name="DISTRICT_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
     <Property Name="DISTRICT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="AMPHUR_ID" Type="Int32" />
-    <Property Name="PROVINCE_ID" Type="Int32" />
-    <Property Name="GEO_ID" Type="Int32" />
+    <Property Name="AMPHUR_ID" Type="String" />
+    <Property Name="PROVINCE_ID" Type="String" />
+    <Property Name="GEO_ID" Type="String" />
   </EntityType>
   <EntityType Name="geography">
     <Key>
@@ -65,7 +65,7 @@
     <Property Name="PROVINCE_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
     <Property Name="PROVINCE_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="PROVINCE_NAME_ENG" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="GEO_ID" Type="Int32" />
+    <Property Name="GEO_ID" Type="String" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
