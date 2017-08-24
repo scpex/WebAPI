@@ -15,16 +15,16 @@ namespace webapi.Controllers
         [AllowAnonymous]
         public dynamic Get()
         {
-            var data = db.districts.Select(s => new { s.DISTRICT_CODE, s.DISTRICT_NAME }).Take(1000).ToList();
+            string[] data = { "AM_ID", "AMPHOE_T", "AMPHOE_E", "CH_ID", "CHANGWAT_T", "CHANGWAT_E" };
             return Json(data);
         }
         [Route("api/district/{input}")]
+        [HttpGet]
         [AllowAnonymous]
-        public dynamic GetDistrict(string input)
+        public dynamic District(string input)
         {
-            var data = db.village2010.Where(w => w.TAM_T.Contains(input)).Select(s => new { s.TAM_CODE, s.TAM_T, s.AMP_T, s.PROV_T }).Take(5).ToList();
+            var data = db.TAMBONs.Where(w => w.AMPHOE_T.Contains(input)).Select(s => new { s.AM_ID, s.AMPHOE_T, s.AMPHOE_E, s.CH_ID, s.CHANGWAT_T, s.CHANGWAT_E }).Take(1).ToList();
             return Json(data);
         }
-
     }
 }

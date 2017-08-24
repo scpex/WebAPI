@@ -86,6 +86,8 @@
     <EntitySet Name="provinces" EntityType="Self.province" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="village2010" EntityType="thailandModel.village2010" />
+    <EntitySet Name="SCHOOLs" EntityType="thailandModel.SCHOOL" />
+    <EntitySet Name="TAMBONs" EntityType="thailandModel.TAMBON" />
   </EntityContainer>
   <EntityType Name="village2010">
     <Key>
@@ -101,5 +103,43 @@
     <Property Name="TAM_T" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="AMP_T" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="PROV_T" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SCHOOL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchoolID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SchoolName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SubDistrict" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Province" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PostCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SchoolType" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TAMBON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD_LEVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TA_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TAMBON_T" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TAMBON_E" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AM_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AMPHOE_T" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AMPHOE_E" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CH_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CHANGWAT_T" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CHANGWAT_E" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

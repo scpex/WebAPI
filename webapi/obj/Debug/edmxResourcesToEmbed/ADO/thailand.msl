@@ -101,5 +101,45 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="SCHOOLs">
+      <EntityTypeMapping TypeName="thailandModel.SCHOOL">
+        <MappingFragment StoreEntitySet="SCHOOL">
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="SubDistrict" ColumnName="SubDistrict" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAMBONs">
+      <EntityTypeMapping TypeName="thailandModel.TAMBON">
+        <MappingFragment StoreEntitySet="TAMBON">
+          <ScalarProperty Name="LONG" ColumnName="LONG" />
+          <ScalarProperty Name="LAT" ColumnName="LAT" />
+          <ScalarProperty Name="CHANGWAT_E" ColumnName="CHANGWAT_E" />
+          <ScalarProperty Name="CHANGWAT_T" ColumnName="CHANGWAT_T" />
+          <ScalarProperty Name="CH_ID" ColumnName="CH_ID" />
+          <ScalarProperty Name="AMPHOE_E" ColumnName="AMPHOE_E" />
+          <ScalarProperty Name="AMPHOE_T" ColumnName="AMPHOE_T" />
+          <ScalarProperty Name="AM_ID" ColumnName="AM_ID" />
+          <ScalarProperty Name="TAMBON_E" ColumnName="TAMBON_E" />
+          <ScalarProperty Name="TAMBON_T" ColumnName="TAMBON_T" />
+          <ScalarProperty Name="TA_ID" ColumnName="TA_ID" />
+          <ScalarProperty Name="AD_LEVEL" ColumnName="AD_LEVEL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

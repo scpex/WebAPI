@@ -15,7 +15,7 @@ namespace webapi.Controllers
         [AllowAnonymous]
         public dynamic GetAllPeople()
         {
-            var data = db.person_th.Select(s => new { s.pname, s.fname, s.lname }).Take(10000).ToList();
+            string[] data = { "ID_Number", "PreName", "Firstame", "LastName", "District_Registry", "Province_Registry" };
             return Json(data);
         }
         [Route("api/people/{id}")]
@@ -25,7 +25,7 @@ namespace webapi.Controllers
         {
             if (id.Length != 13)
             {
-                return "ID Incorrect!!!";
+                return Json("ID Incorrect!!!");
             }
             int i = 11 - (((Convert.ToInt32(id.Substring(0, 1)) * 13)
                 + (Convert.ToInt32(id.Substring(1, 1)) * 12)
@@ -42,7 +42,7 @@ namespace webapi.Controllers
             int j = Convert.ToInt32(id.Substring(12, 1));
             if (j != i)
             {
-                return "Number Incorrect!!!";
+                return Json("Number Incorrect!!!");
             }
             else
             {
@@ -57,14 +57,14 @@ namespace webapi.Controllers
                         join p in db.provinces on codeP equals p.PROVINCE_CODE
                         select new
                         {
-                            psid = ps.id1,
-                            pspname = ps.pname,
-                            psfname = ps.fname,
-                            pslname = ps.lname,
-                            aname = a.AMPHUR_NAME,
-                            pname = p.PROVINCE_NAME
+                            ID_Number = ps.id1,
+                            PreName = ps.pname,
+                            Firstame = ps.fname,
+                            LastName = ps.lname,
+                            District_Registry = a.AMPHUR_NAME,
+                            Province_Registry = p.PROVINCE_NAME
                         };
-                var info = q.Where(w => w.psid == id).ToList();
+                var info = q.Where(w => w.ID_Number == id).ToList();
                 return Json(info);
             }
         }

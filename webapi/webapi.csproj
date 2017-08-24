@@ -170,7 +170,13 @@
     <Compile Include="ADO\province.cs">
       <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
+    <Compile Include="ADO\SCHOOL.cs">
+      <DependentUpon>thailand.tt</DependentUpon>
+    </Compile>
     <Compile Include="ADO\sysdiagram.cs">
+      <DependentUpon>thailand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADO\TAMBON.cs">
       <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
     <Compile Include="ADO\thailand.Context.cs">
@@ -223,8 +229,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AmphurController.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
+    <Compile Include="Controllers\SubDistrictController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -294,7 +300,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

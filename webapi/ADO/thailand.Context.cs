@@ -33,5 +33,7 @@ namespace webapi.ADO
         public virtual DbSet<province> provinces { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<village2010> village2010 { get; set; }
+        public virtual DbSet<SCHOOL> SCHOOLs { get; set; }
+        public virtual DbSet<TAMBON> TAMBONs { get; set; }
     }
 }

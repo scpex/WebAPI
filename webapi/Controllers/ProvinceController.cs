@@ -16,7 +16,7 @@ namespace webapi.Controllers
         [AllowAnonymous]
         public dynamic Get()
         {
-            var data = db.provinces.Select(s => new { s.PROVINCE_CODE, s.PROVINCE_NAME, s.PROVINCE_NAME_ENG, s.GEO_ID }).Take(100).ToList();
+            string[] data = { "CH_ID", "CHANGWAT_T", "CHANGWAT_E" };
             return Json(data);
         }
         [Route("api/province/{input}")]
@@ -24,7 +24,7 @@ namespace webapi.Controllers
         [AllowAnonymous]
         public dynamic Province(string input)
         {
-            var data = db.provinces.Where(w => w.PROVINCE_CODE == input).Select(s => new { s.PROVINCE_CODE, s.PROVINCE_NAME, s.PROVINCE_NAME_ENG, s.GEO_ID }).ToList();
+            var data = db.TAMBONs.Where(w => w.CHANGWAT_T.Contains(input)).Select(s => new { s.CH_ID, s.CHANGWAT_T, s.CHANGWAT_E }).Take(1).ToList();
             return Json(data);
         }
     }
