@@ -161,6 +161,9 @@
     <Compile Include="ADO\geography.cs">
       <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
+    <Compile Include="ADO\HOSPITAL.cs">
+      <DependentUpon>thailand.tt</DependentUpon>
+    </Compile>
     <Compile Include="ADO\person.cs">
       <DependentUpon>thailand.tt</DependentUpon>
     </Compile>
@@ -230,6 +233,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\DistrictController.cs" />
+    <Compile Include="Controllers\HospitalController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SubDistrictController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
