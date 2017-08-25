@@ -15,7 +15,7 @@ namespace webapi.Controllers
         [AllowAnonymous]
         public dynamic Get()
         {
-            string[] data = { ""};
+            string[] data = { "MainHospitalCode", "OldCode", "ShortName", "FullName", "HospitalType2Name", "Description", "Address", "DistrictName", "ProvinceName", "RegionName", "Telephone","Fax" };
             return Json(data);
         }
         [Route("api/hospital/code/{input}")]
